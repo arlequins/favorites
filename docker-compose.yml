@@ -1,0 +1,84 @@
+version: '3.3'
+
+services:
+
+  elasticsearch:
+    build:
+      context: ./dockerfile/elasticsearch
+      dockerfile: Dockerfile
+    image: elasticsearch:1.0.0
+    container_name: elasticsearch
+    ports:
+      - "19200:9200"
+      - "19300:9300"
+    volumes:
+      - ~/docker/elk/elasticsearch/data:/usr/share/elasticsearch/data
+      - ~/docker/elk/elasticsearch/backup:/opt/elasticsearch/backup
+    environment:
+      - cluster.name=es-cluster
+      - node.name=localhost
+      - discovery.seed_hosts=localhost
+      - cluster.initial_master_nodes=localhost
+      - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      - network.host=0.0.0.0 # required if not using the demo Security configuration
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:9200/_cluster/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+    restart: "unless-stopped"
+    networks:
+      - docker-network
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536 # maximum number of open files for the Elasticsearch user, set to at least 65536 on modern systems
+        hard: 65536
+
+  kibana:
+    build:
+      context: ./dockerfile/kibana
+      dockerfile: Dockerfile
+    image: kibana:1.0.0
+    container_name: kibana
+    ports:
+      - "15601:5601"
+    expose:
+      - "5601"
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5601/status"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+    restart: "unless-stopped"
+    networks:
+      - docker-network
+    depends_on:
+      - elasticsearch
+
+  mariadb:
+    build:
+      context: ./dockerfile/mariadb
+      dockerfile: Dockerfile
+    image: mariadb:1.0.0
+    container_name: mariadb
+    volumes:
+    - ~/docker/mariadb:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    restart: "unless-stopped"
+    environment:
+      MARIADB_ROOT_PASSWORD: "root"
+    tty: true
+    networks:
+      - docker-network
+
+networks:
+  docker-network:
+    external: true

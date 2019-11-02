@@ -1,0 +1,27 @@
+cluster.name: "es-cluster"
+# network.host: 0.0.0.0
+network.host: [_local_, _site_]
+network.bind_host: 0.0.0.0
+network.publish_host: 0.0.0.0
+http.host: 0.0.0.0
+transport.host: 0.0.0.0
+
+discovery.zen.minimum_master_nodes: 1
+
+node:
+  master: true
+  data: true
+  ingest: true
+  name: es
+
+cluster.initial_master_nodes:
+- localhost
+
+path:
+  repo: ["/opt/elasticsearch/backup"]
+
+http.compression: true
+
+opendistro_security.ssl.http.enabled: false
+opendistro_security.disabled: true
+cluster.routing.allocation.disk.threshold_enabled: false

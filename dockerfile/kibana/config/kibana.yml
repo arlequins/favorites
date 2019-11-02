@@ -1,0 +1,23 @@
+---
+server:
+  name: kibana
+  host: "0"
+  port: 5601
+  maxPayloadBytes: 10485760
+
+kibana:
+  index: .kibana
+console:
+  enabled: false
+logging:
+  quiet: true
+  silent: true
+  verbose: true
+  useUTC: false
+path:
+  data: data
+elasticsearch:
+  requestTimeout: 300000
+  shardTimeout: 300000
+  startupTimeout: 5000
+  hosts: ["http://elasticsearch:9200"]
