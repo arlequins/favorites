@@ -1,0 +1,82 @@
+{
+  "name": "es-db-transfer",
+  "version": "1.0.0",
+  "description": "Created for https://github.com/arlequins/favorites",
+  "main": "./index.js",
+  "author": "arlequins <tiret.rouge@gmail.com> (https://github.com/arlequins)",
+  "license": "MIT",
+  "repository": "https://github.com/arlequins/favorites",
+  "config": {
+    "localhost": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_VERSION": "v1",
+      "POSTGRES_HOST": "localhost",
+      "POSTGRES_PORT": "15432",
+      "POSTGRES_TABLE": "database",
+      "POSTGRES_USER": "root",
+      "POSTGRES_PASSWORD": "root",
+      "MARIADB_HOST": "localhost",
+      "MARIADB_PORT": "13306",
+      "MARIADB_TABLE": "database",
+      "MARIADB_USER": "root",
+      "MARIADB_PASSWORD": "root",
+      "MARIADB_TRACE": true,
+      "ENV": "localhost",
+      "DEBUG_FLAG": true
+    },
+    "release": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_VERSION": "v1",
+      "POSTGRES_HOST": "localhost",
+      "POSTGRES_PORT": "15432",
+      "POSTGRES_TABLE": "database",
+      "POSTGRES_USER": "root",
+      "POSTGRES_PASSWORD": "root",
+      "MARIADB_HOST": "localhost",
+      "MARIADB_PORT": "13306",
+      "MARIADB_TABLE": "database",
+      "MARIADB_USER": "root",
+      "MARIADB_PASSWORD": "root",
+      "MARIADB_TRACE": false,
+      "ENV": "localhost",
+      "DEBUG_FLAG": false
+    },
+    "production": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_VERSION": "v1",
+      "POSTGRES_HOST": "localhost",
+      "POSTGRES_PORT": "15432",
+      "POSTGRES_TABLE": "database",
+      "POSTGRES_USER": "root",
+      "POSTGRES_PASSWORD": "root",
+      "MARIADB_HOST": "localhost",
+      "MARIADB_PORT": "13306",
+      "MARIADB_TABLE": "database",
+      "MARIADB_USER": "root",
+      "MARIADB_PASSWORD": "root",
+      "MARIADB_TRACE": false,
+      "ENV": "localhost",
+      "DEBUG_FLAG": false
+    }
+  },
+  "scripts": {
+    "prereinstall": "node -rf node_modules",
+    "reinstall": "npm install",
+    "install": "npm install",
+    "alias": "node ./src/alias.js",
+    "index": "node ./src/index.js",
+    "delete": "node ./src/delete.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0",
+    "elasticsearch": "^16.3.0",
+    "moment-range": "^4.0.2",
+    "moment-timezone": "^0.5.23",
+    "mysql": "^2.16.0",
+    "process": "^0.11.10"
+  }
+}
