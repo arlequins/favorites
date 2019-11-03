@@ -4,7 +4,7 @@ const helpers = require('../helpers')
 const util = require('util')
 const env = helpers.currentEnvironment(process.env)
 
-const debug = env.ENV === 'localhost' ? {
+const debug = env.NODE_ENV === 'localhost' ? {
   debug: true,
 } : {}
 

@@ -10,3 +10,11 @@ docker cp ./deploy/migration.sh mariadb:/tmp
 
 docker exec mariadb /tmp/inituser.sh
 docker exec mariadb /tmp/migration.sh
+
+# npm install
+cd api
+npm install
+cd ..
+cd transfer
+npm install
+cd ..
