@@ -3,5 +3,6 @@ module.exports = (server) => {
 
   // S: v1
   require(`.${v1}/favorites`)(server, v1)
+  require(`.${v1}/count/favorites`)(server, v1)
   // E: v1
 }

@@ -1,3 +1,4 @@
+'use strict'
 function Enum() {
   this._enums = [];
   this._lookups = {};

@@ -1,3 +1,4 @@
+'use strict'
 module.exports.badRequest = (res, msg, log) => {
   if (log) {
     console.error(log)

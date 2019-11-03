@@ -9,7 +9,7 @@
   "config": {
     "localhost": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "X_API_KEY": "x-api-key",
       "X_REQUEST_ID": "x-request-id",
@@ -18,7 +18,7 @@
     },
     "release": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "X_API_KEY": "x-api-key",
       "X_REQUEST_ID": "x-request-id",
@@ -27,7 +27,7 @@
     },
     "production": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "X_API_KEY": "x-api-key",
       "X_REQUEST_ID": "x-request-id",
@@ -48,12 +48,13 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
+    "elasticsearch": "^16.5.0",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "morgan": "^1.9.1",
-    "stack-trace": "^0.0.10",
     "process": "^0.11.10",
+    "stack-trace": "^0.0.10",
     "winston": "^3.0.0",
     "winston-daily-rotate-file": "^3.3.0"
   }

@@ -1,5 +1,7 @@
 'use strict'
 const fs = require('fs')
+const moment = require('moment-timezone')
+const TIMEZONE = 'Asia/Tokyo'
 
 // S: private
 const escapeRegExp = (str) => {
@@ -137,9 +139,9 @@ const formatCount = (n, c, d, t) => {
 
 const setDate = (str) => {
   if (str) {
-    return moment(str).tz(timezone)
+    return moment(str).tz(TIMEZONE)
   } else {
-    return moment().tz(timezone)
+    return moment().tz(TIMEZONE)
   }
 }
 

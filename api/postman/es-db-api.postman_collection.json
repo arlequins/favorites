@@ -18,17 +18,23 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "uniqueid1"
+						"value": "testtest6"
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/{{v1}}/favorites",
+					"raw": "{{base_url}}/{{v1}}/favorites?type=0",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"{{v1}}",
 						"favorites"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "0"
+						}
 					]
 				}
 			},
@@ -47,7 +53,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "uniqueid1"
+						"value": "testtest2"
 					},
 					{
 						"key": "Content-Type",
@@ -66,17 +72,12 @@
 						},
 						{
 							"key": "code",
-							"value": "0001",
+							"value": "0004",
 							"type": "text"
 						},
 						{
 							"key": "meta_code",
 							"value": "0001",
-							"type": "text"
-						},
-						{
-							"key": "action",
-							"value": "0",
 							"type": "text"
 						}
 					]
@@ -106,7 +107,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "uniqueid1",
+						"value": "testtest5",
 						"type": "text"
 					},
 					{
@@ -133,11 +134,6 @@
 							"key": "meta_code",
 							"value": "0001",
 							"type": "text"
-						},
-						{
-							"key": "action",
-							"value": "0",
-							"type": "text"
 						}
 					]
 				},
@@ -149,6 +145,50 @@
 					"path": [
 						"{{v1}}",
 						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/count/favorites (get)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"type": "text",
+						"value": "reqeustid1"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "testtest5"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/{{v1}}/count/favorites?type=0&code=0004&meta_code=0001",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{v1}}",
+						"count",
+						"favorites"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "0"
+						},
+						{
+							"key": "code",
+							"value": "0004"
+						},
+						{
+							"key": "meta_code",
+							"value": "0001"
+						}
 					]
 				}
 			},

@@ -1,3 +1,4 @@
+'use strict'
 const defineEnum = require('./')
 
 module.exports.ORDER = defineEnum({
