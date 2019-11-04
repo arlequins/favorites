@@ -2,7 +2,7 @@
   "name": "es-db-transfer",
   "version": "1.0.0",
   "description": "Created for https://github.com/arlequins/favorites",
-  "main": "./index.js",
+  "main": "src/index.js",
   "author": "arlequins <tiret.rouge@gmail.com> (https://github.com/arlequins)",
   "license": "MIT",
   "repository": "https://github.com/arlequins/favorites",

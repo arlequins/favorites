@@ -1,0 +1,73 @@
+{
+  "name": "tsukuyomi",
+  "version": "1.0.0",
+  "description": "Created for https://github.com/arlequins/favorites",
+  "main": "src/index.js",
+  "author": "arlequins <tiret.rouge@gmail.com> (https://github.com/arlequins)",
+  "license": "MIT",
+  "repository": "https://github.com/arlequins/favorites",
+  "config": {
+    "localhost": {
+      "API_URL": "http://localhost:3000",
+      "API_V1": "v1",
+      "ENV": "localhost",
+      "DEBUG": true
+    },
+    "release": {
+      "API_URL": "http://localhost:3000",
+      "API_V1": "v1",
+      "ENV": "release",
+      "DEBUG": true
+    },
+    "production": {
+      "API_URL": "http://localhost:3000",
+      "API_V1": "v1",
+      "ENV": "production",
+      "DEBUG": false
+    }
+  },
+  "scripts": {
+    "prereinstall": "rm -rf node_modules",
+    "reinstall": "npm install",
+    "lint": "tslint -p ./",
+    "start": "webpack-dev-server --mode development --hot --open --progress --color --port 5000",
+    "build": "webpack --mode production -p --colors",
+    "build:release": "webpack --mode production -p",
+    "build:production": "webpack --mode production -p"
+  },
+  "devDependencies": {
+    "@types/deep-equal": "^1.0.1",
+    "@types/url-join": "^0.8.2",
+    "@types/webpack": "^4.4.4",
+    "@types/webpack-env": "^1.13.6",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "prop-types": "^15.6.2",
+    "tslib": "^1.9.3",
+    "tslint": "^5.10.0",
+    "tslint-loader": "^3.6.0",
+    "typesafe-actions": "^2.0.4",
+    "typescript": "^3.6.4",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-join": "^4.0.0",
+    "utility-types": "^2.0.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.5",
+    "axios": "^0.18.0",
+    "babel-runtime": "^6.26.0",
+    "prettier": "^1.18.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1"
+  }
+}

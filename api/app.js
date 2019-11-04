@@ -9,7 +9,7 @@ const router = express.Router()
 app.set('view engine', 'pug')
 app.use(cors({
   origin: '*',
-  methods: 'GET,POST,OPTION',
+  methods: 'GET,POST,PUT,DELETE,OPTION',
   preflightContinue: true,
   credentials: true,
   optionsSuccessStatus: 204,

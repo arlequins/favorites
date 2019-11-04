@@ -36,7 +36,7 @@ module.exports = (server, version) => {
         parent: -1,
         meta: -1,
       },
-      params: params,
+      payload: params,
     }
 
     try {
@@ -52,7 +52,7 @@ module.exports = (server, version) => {
       result = {
         status: 200,
         count: count,
-        params: params,
+        payload: params,
       }
 
       res.json(result)
