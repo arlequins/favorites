@@ -1,11 +1,34 @@
 import { FavoritesListCount, FavoritesListResult, Payload } from 'common'
 
+export const USER_ACTION_FAVORITES_BTN = (allCount: FavoritesListCount, type: number) => {
+  const isClicked = type === 0 ? true : false
+
+  const html = `
+    <li class="${['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', isClicked ? 'list-group-item-danger' : ''].join(' ')}">
+      ${isClicked ? `YOU'VE LIKE THIS! CANCEL IT?` : `LIKE IT? CLICK HERE!`}
+      <span class="badge badge-primary badge-pill">${type === 0 ? allCount.parent + 1 : allCount.parent}</span>
+    </li>
+    `
+  return html
+}
+
+export const USER_FAVORITES_BTN = (count: FavoritesListCount, allCount: FavoritesListCount, type: number) => {
+  const isClicked = type === 0 ? (count.parent > 0 ? true : false) : (count.meta > 0 ? true : false)
+  const html = `
+    <li class="${['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', isClicked ? 'list-group-item-danger' : ''].join(' ')}">
+      ${isClicked ? `YOU'VE LIKE THIS! CANCEL IT?` : `LIKE IT? CLICK HERE!`}
+      <span class="badge badge-primary badge-pill">${allCount.parent}</span>
+    </li>
+    `
+  return html
+}
+
 export const USER_FAVORITES_LIST = (uniqueId: string, result: FavoritesListResult, count: FavoritesListCount) => {
   const html = `
     </div>
     <div class="container">
-      <h1 class="display-4">USER FAVORITES LIST</h1>
-      <h3 class="display-8">UNIQUEID</h1>
+      <h2 class="display-4">USER FAVORITES LIST</h2>
+      <h3 class="display-8">UNIQUEID</h3>
       <p class="lead">${uniqueId}</p>
 
       <div class="row pb-4">
@@ -60,8 +83,8 @@ export const USER_FAVORITES_LIST = (uniqueId: string, result: FavoritesListResul
 export const FAVORITES_LIST = (payload: Payload, count: FavoritesListCount) => {
   const html = `
     <div class="container">
-      <h1 class="display-4">FAVORITES LIST</h1>
-      <h3 class="display-8">PAYLOAD</h1>
+      <h2 class="display-4">FAVORITES LIST</h2>
+      <h3 class="display-8">PAYLOAD</h3>
       <p class="lead mb-0">CODE: ${payload.code}</p>
       <p class="lead mb-0">META_CODE: ${payload.meta_code}</p>
       <p class="lead">TYPE: ${payload.type}</p>
