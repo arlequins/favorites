@@ -26,7 +26,7 @@ const currentEnvironment = (env) => {
   }
 
   if (!config.hasOwnProperty(currentTargetEnv) && !currentTargetEnv) {
-    console.info('there is no environment. process in localhost')
+    // console.info('there is no environment. process in localhost')
     return config['localhost']
   }
 
