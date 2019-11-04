@@ -1,0 +1,23 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node app.local.js"
+  },
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "watch": [
+    "**"
+  ],
+  "delay": "5",
+  "env": {
+    "NODE_ENV": "localhost",
+    "LOG_LEVEL": "nodemon"
+  },
+  "ext": "js,json"
+}

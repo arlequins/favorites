@@ -1,0 +1,18 @@
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid1_0_0001"}}
+{"type": "primary", "uniqueId": "uniqueid1", "typeId": 0, "code": "0001", "metajoin": "primary", "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid1_0_0001_0001", "routing": "uniqueid1_0_0001"}}
+{"type": "meta", "uniqueId": "uniqueid1", "typeId": 0, "code": "0001", "metajoin": {"name": "meta", "parent": "uniqueid1_0_0001"}, "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid1_0_0001_0002", "routing": "uniqueid1_0_0001"}}
+{"type": "meta", "uniqueId": "uniqueid1", "typeId": 0, "code": "0002", "metajoin": {"name": "meta", "parent": "uniqueid1_0_0001"}, "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_0_0002"}}
+{"type": "primary", "uniqueId": "uniqueid2", "typeId": 0, "code": "0002", "metajoin": "primary", "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_0_0002_0001", "routing": "uniqueid2_0_0002"}}
+{"type": "meta", "uniqueId": "uniqueid2", "typeId": 0, "code": "0001", "metajoin": {"name": "meta", "parent": "uniqueid2_0_0002"}, "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_0_0002_0002", "routing": "uniqueid2_0_0002"}}
+{"type": "meta", "uniqueId": "uniqueid2", "typeId": 0, "code": "0002", "metajoin": {"name": "meta", "parent": "uniqueid2_0_0002"}, "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_1_0001"}}
+{"type": "primary", "uniqueId": "uniqueid2", "typeId": 1, "code": "0001", "metajoin": "primary", "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_1_0001_0001", "routing": "uniqueid2_1_0001"}}
+{"type": "meta", "uniqueId": "uniqueid2", "typeId": 1, "code": "0001", "metajoin": {"name": "meta", "parent": "uniqueid2_1_0001"}, "@timestamp":1572764023761, "@version": 1}
+{"index": {"_index": "favirotes-v1", "_type": "_doc", "_id": "uniqueid2_1_0001_0002", "routing": "uniqueid2_1_0001"}}
+{"type": "meta", "uniqueId": "uniqueid2", "typeId": 1, "code": "0002", "metajoin": {"name": "meta", "parent": "uniqueid2_1_0001"}, "@timestamp":1572764023761, "@version": 1}

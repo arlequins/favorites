@@ -12,7 +12,7 @@ console:
 logging:
   quiet: true
   silent: true
-  verbose: true
+  verbose: false
   useUTC: false
 path:
   data: data

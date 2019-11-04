@@ -1,0 +1,61 @@
+{
+  "name": "es-db-api",
+  "version": "1.0.0",
+  "description": "Created for https://github.com/arlequins/favorites",
+  "main": "./app.local.js",
+  "author": "arlequins <tiret.rouge@gmail.com> (https://github.com/arlequins)",
+  "license": "MIT",
+  "repository": "https://github.com/arlequins/favorites",
+  "config": {
+    "localhost": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirotes",
+      "ELASTICSEARCH_VERSION": "v1",
+      "X_API_KEY": "x-api-key",
+      "X_REQUEST_ID": "x-request-id",
+      "NODE_ENV": "localhost",
+      "DEBUG_FLAG": true
+    },
+    "release": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirotes",
+      "ELASTICSEARCH_VERSION": "v1",
+      "X_API_KEY": "x-api-key",
+      "X_REQUEST_ID": "x-request-id",
+      "NODE_ENV": "release",
+      "DEBUG_FLAG": true
+    },
+    "production": {
+      "ELASTICSEARCH_URI": "http://localhost:19200",
+      "ELASTICSEARCH_INDEX": "favirotes",
+      "ELASTICSEARCH_VERSION": "v1",
+      "X_API_KEY": "x-api-key",
+      "X_REQUEST_ID": "x-request-id",
+      "NODE_ENV": "production",
+      "DEBUG_FLAG": true
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:localhost": "pm2 start --no-daemon ./pm2/process_localhost.json --env localhost",
+    "server:release": "pm2 start ./pm2/process.json --env release",
+    "server:production": "pm2 start ./pm2/process.json --env production",
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-retry": "^3.1.2",
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "cors": "^2.8.3",
+    "elasticsearch": "^16.5.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.23",
+    "morgan": "^1.9.1",
+    "process": "^0.11.10",
+    "stack-trace": "^0.0.10",
+    "winston": "^3.0.0",
+    "winston-daily-rotate-file": "^3.3.0"
+  }
+}
