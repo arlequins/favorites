@@ -1,22 +1,21 @@
-import { requestFavoritesCount } from './ApiRequestServices'
+import { UserData } from 'common'
 
 export class Tsukuyomi {
-  userData: any
-	event: any
+  userData: UserData
+  isInit: boolean
 
-  constructor (event: any, userData: any) {
-    this.event = event
-		this.userData = userData
-
+  constructor (userData: UserData) {
     // initial
-    this.fire()
-    this.setListener(this.event, this.userData)
+    this.fire(userData)
   }
 
-  async fire () {
+  fire (userData: UserData): void {
+    if (userData.uniqueId && userData.uniqueId.length > 0) {
+      this.userData = {
+        requestId: userData.requestId,
+        uniqueId: userData.uniqueId && userData.uniqueId.length > 0 ? userData.uniqueId : '',
+      }
+    }
+    this.isInit = true
   }
-
-	setListener (_requestLogs: any, _userData: any) {
-
-	}
 }

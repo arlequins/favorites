@@ -1,27 +1,21 @@
-import { Response } from 'common'
+import { Payload, Response, UserData } from 'common'
 import urlJoin from 'url-join'
 
 import { Request } from './methods'
 
 import { FAVORITES_URL } from './constant'
 
-export const requestFavoritesCount = async (params: any) => {
+export const requestFavorites = async (payload: Payload, userData: UserData) => {
   let result: Response = {
-    data: {},
-    status: 404,
+    status: 500,
+    payload: {},
   }
 
   try {
-    const response = await Request.get(urlJoin(FAVORITES_URL, 'favorites'), params)
-    if (response.status === 200) {
-      const data: any = response.data || {}
-      result = {
-        data: data,
-        status: 200,
-      }
-    }
+    result = await Request.get(urlJoin(FAVORITES_URL, 'favorites'), payload, userData)
   } catch(e) {
-    console.error('# ERROR IN requestFavoritesCount: ', e)
+    // tslint:disable
+    console.error('# ERROR IN requestFavorites: ', e)
   }
 
   return result

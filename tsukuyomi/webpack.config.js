@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: buildFolder,
     filename: '[name].js',
+    publicPath: env.DEV_MODE ? `http://localhost:5000/` : `/`,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -27,8 +28,14 @@ module.exports = {
         include: [ /src\/js/, /node_modules\/axios/ ],
         exclude: /node_modules/,
         use: [
+          !env.DEV_MODE && {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['react-hot-loader/babel']
+            }
+          },
           'ts-loader'
-        ].filter(Boolean),
+        ].filter(Boolean)
       },
       {
         test: /\.tsx?$/,

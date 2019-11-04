@@ -32,7 +32,7 @@ module.exports = (server, version) => {
       status: 500,
       total: 0,
       result: [],
-      params: params,
+      payload: params,
     }
 
     try {
@@ -54,7 +54,7 @@ module.exports = (server, version) => {
           meta: metaCount,
         },
         result: mutate,
-        params: params,
+        payload: params,
       }
 
       res.json(result)
@@ -84,7 +84,7 @@ module.exports = (server, version) => {
     let result = {
       status: 500,
       result: -1,
-      params: params,
+      payload: params,
     }
 
     try {
@@ -108,7 +108,7 @@ module.exports = (server, version) => {
             status: response.status,
             count: response.count,
           },
-          params: params,
+          payload: params,
         }
 
         res.json(result)
@@ -119,7 +119,7 @@ module.exports = (server, version) => {
           status: 400,
           error: message,
           count: count,
-          params: params,
+          payload: params,
         }
 
         res.json(result)
@@ -150,7 +150,7 @@ module.exports = (server, version) => {
     let result = {
       status: 500,
       result: -1,
-      params: params,
+      payload: params,
     }
 
     try {
@@ -170,7 +170,7 @@ module.exports = (server, version) => {
           status: response.status,
           count: response.count,
         },
-        params: params,
+        payload: params,
       }
 
       res.json(result)

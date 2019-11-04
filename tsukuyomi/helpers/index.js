@@ -31,6 +31,13 @@ const currentEnvironment = (env) => {
     'build:production': 'production',
   }
 
+  for (const key in config) {
+    if (config.hasOwnProperty(key)) {
+      const ele = config[key]
+      ele.DEV_MODE = cmd === 'start' ? true : false
+    }
+  }
+
   const currentEnv = determinedCmd[cmd]
   if (currentEnv) {
     return config[currentEnv]
