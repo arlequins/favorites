@@ -124,7 +124,7 @@ class Favorites extends Tsukuyomi {
     try {
       response = await requestUserFavorites(payload, userData)
     } catch(e) {
-      console.log('# ERROR IN getUserFavorites: ', e)
+      console.error('# ERROR IN getUserFavorites: ', e)
     }
 
     if (response && response.hasOwnProperty('result') && response.result.hasOwnProperty('list')) {
@@ -145,7 +145,7 @@ class Favorites extends Tsukuyomi {
     try {
       response = await requestAllFavorites(payload)
     } catch(e) {
-      console.log('# ERROR IN getAllFavorites: ', e)
+      console.error('# ERROR IN getAllFavorites: ', e)
     }
 
     if (response && response.hasOwnProperty('count') && response.count.hasOwnProperty('parent')) {
