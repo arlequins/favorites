@@ -4,7 +4,8 @@ curl -XPUT "http://localhost:19200/_template/favirotes-v1?pretty" -H 'Content-Ty
     "index": {
       "number_of_shards": 5,
       "number_of_replicas": 1,
-      "max_inner_result_window": 100000
+      "max_inner_result_window": 100000,
+      "max_result_window": 100000
     }
   }, "mappings": {
     "properties": {
@@ -41,7 +42,8 @@ curl -XPUT "http://localhost:19200/favirotes-v1?pretty" -H 'Content-Type: applic
     "index": {
       "number_of_shards": 5,
       "number_of_replicas": 1,
-      "max_inner_result_window": 100000
+      "max_inner_result_window": 100000,
+      "max_result_window": 100000
     }
   },
   "mappings": {

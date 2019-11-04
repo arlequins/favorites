@@ -5,7 +5,7 @@ const util = require('util')
 const env = helpers.currentEnvironment(process.env)
 
 const debug = env.NODE_ENV === 'localhost' ? {
-  debug: true,
+  debug: false,
 } : {}
 
 const pool = mysql.createPool({
