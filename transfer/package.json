@@ -9,20 +9,20 @@
   "config": {
     "localhost": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "MARIADB_HOST": "localhost",
       "MARIADB_PORT": "13306",
       "MARIADB_TABLE": "database",
       "MARIADB_USER": "root",
       "MARIADB_PASSWORD": "root",
-      "MARIADB_TRACE": true,
+      "MARIADB_TRACE": false,
       "NODE_ENV": "localhost",
       "DEBUG_FLAG": true
     },
     "release": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "MARIADB_HOST": "localhost",
       "MARIADB_PORT": "13306",
@@ -35,7 +35,7 @@
     },
     "production": {
       "ELASTICSEARCH_URI": "http://localhost:19200",
-      "ELASTICSEARCH_INDEX": "favirote",
+      "ELASTICSEARCH_INDEX": "favirotes",
       "ELASTICSEARCH_VERSION": "v1",
       "MARIADB_HOST": "localhost",
       "MARIADB_PORT": "13306",
@@ -52,7 +52,7 @@
     "reinstall": "npm install",
     "install": "npm install",
     "alias": "node ./src/alias.js",
-    "index": "node ./src/index.js",
+    "upsert": "node ./src/upsert.js",
     "delete": "node ./src/delete.js"
   },
   "devDependencies": {},
