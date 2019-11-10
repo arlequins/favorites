@@ -16,8 +16,19 @@ export const USER_FAVORITES_BTN = (count: FavoritesListCount, allCount: Favorite
   const isClicked = type === 0 ? (count.parent > 0 ? true : false) : (count.meta > 0 ? true : false)
   const html = `
     <li class="${['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', isClicked ? 'list-group-item-danger' : ''].join(' ')}">
-      ${isClicked ? `YOU'VE LIKE THIS! CANCEL IT?` : `LIKE IT? CLICK HERE!`}
+      ${isClicked ? `YOU'VE LIKE PARENT! CANCEL IT?` : `LIKE PARENT? CLICK HERE!`}
       <span class="badge badge-primary badge-pill">${allCount.parent}</span>
+    </li>
+    `
+  return html
+}
+
+export const USER_META_FAVORITES_BTN = (count: FavoritesListCount, allCount: FavoritesListCount, type: number) => {
+  const isClicked = type === 0 ? (count.parent > 0 ? true : false) : (count.meta > 0 ? true : false)
+  const html = `
+    <li class="${['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', isClicked ? 'list-group-item-danger' : ''].join(' ')}">
+      ${isClicked ? `YOU'VE LIKE META! CANCEL IT?` : `LIKE META? CLICK HERE!`}
+      <span class="badge badge-primary badge-pill">${allCount.meta}</span>
     </li>
     `
   return html

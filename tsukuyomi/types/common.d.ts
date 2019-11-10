@@ -25,7 +25,17 @@ declare module 'common' {
   }
 
   interface FavoritesListCount {
+    [key: string]: any
     parent: number
     meta: number
+    pathname?: string
+  }
+
+  interface Store {
+    uniqueId: string
+    count: FavoritesListCount
+    currentPageCount: FavoritesListCount
+    result: FavoritesListResult
+    flag: boolean
   }
 }
